@@ -30,13 +30,14 @@ After the dependencies are installed, run `npm start` to fire up the server on p
 
 # I'm Learnding
 
-Read through `Gruntfile.js`, it is documented and has links to the full documentation for each module I'm using. Once you have a pretty good idea of what does what, fire up the watch task:
+### Grunt
+The easiest way to learn is just by reading through `Gruntfile.js`, it is documented and has links to the full documentation for each module I'm using. Once you have a pretty good idea of what does what, fire up the watch task:
 
 ```
 # open this in a new terminal tab, it gives helpful output
 grunt monitor
 ```
-### Javascript
+### Javascript Compilation
 
 Now that you have the watch task running, head over to `public/js/main.js` and add some code, for example:
 
