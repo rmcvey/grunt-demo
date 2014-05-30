@@ -3,18 +3,18 @@ $hover_color: #30700B;
 
 .container {
   margin-top: 20px;
-	.navbar {
-	  margin-bottom: 20px;
-	}
+  .navbar {
+    margin-bottom: 20px;
+  }
 }
 
 .jumbotron{
-	h1{
-		color: $h1_color;
-		
-		/* psuedo-selectors on the current element using & */
-		&:hover{
-			color: $hover_color;
-		}
-	}
+  h1{
+    color: $h1_color;
+    
+    /* psuedo-selectors on the current element using & */
+    &:hover{
+      color: $hover_color;
+    }
+  }
 }
