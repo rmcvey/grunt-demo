@@ -1,5 +1,9 @@
+# Simple Grunt Setup
+This repo will walk you through a simple grunt setup using a few popular plugins (concat, uglify, jshint, watch & compass). [Grunt documentation can be found here](http://gruntjs.com/), find awesome [grunt plugins here](http://gruntjs.com/plugins)
+
 # Required Dependencies
-If you don't already have node, npm, sass and compass installed, please do so before you get started:
+--- 
+If you don't already have node, npm, ruby, sass and compass installed, please do so before you get started:
 
 ### Node & NPM
 ```
@@ -23,10 +27,15 @@ If you don't have LiveReload installed, it can make things a little nicer for yo
 
 [LiveReload Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en)
 
+
 # Getting Started
+
+---
 Once you have the repo checked out and have cd'd into it, run `npm install`, this will install all dev dependencies for the project. 
 
 After the dependencies are installed, run `npm start` to fire up the server on port 8888 (**protip**: if that port is in use on your machine, pass an open port as the third param `npm start 8889`). Open up [http://localhost:8888](http://localhost:8888) in your favorite browser (Chrome)
+
+---
 
 # I'm Learnding
 
@@ -67,5 +76,8 @@ $h1_color: #BECCB6;
 	}
 }
 ``` 
+Once the file is saved, the `compass` task compiles the sass down to css, then the `concat` task merges all of our css files and reloads the page.
 
+# Conclusion
+Learning Grunt can significantly boost your client-side dev time. If you like it, I suggest looking into `bower` [site](http://bower.io/) and `yeoman` [site](http://yeoman.io/) to optimize even further.
 
