@@ -9,9 +9,6 @@ module.exports = function(grunt) {
 		* more info here: https://github.com/gruntjs/grunt-contrib-concat
 		*/
     concat: {
-      options: {
-        separator: ';'
-      },
 			// the name here is arbitrary, we can call one 'libs' to just concatenate third-party scripts
       jslibs: {
         src: ['public/js/jquery-2.1.1.min.js', 'public/js/bootstrap.min.js'],
@@ -48,7 +45,7 @@ module.exports = function(grunt) {
 		* Read more: https://github.com/gruntjs/grunt-contrib-jshint
 		*/
     jshint: {
-      files: ['Gruntfile.js', 'public/js/*.js'],
+      files: ['Gruntfile.js', 'public/js/main.js'],
       options: {
         // options here to override JSHint defaults
         globals: {
@@ -64,14 +61,16 @@ module.exports = function(grunt) {
 		* Read more: https://github.com/gruntjs/grunt-contrib-compass
 		*/
 		compass: {
-			options: {
-				debugInfo: false,
-				noLineComments: true,
-				outputStyle: 'nested',
-				sassDir: 'public/scss',
-				cssDir: 'public/css'
+			dist: {
+				options: {
+					debugInfo: false,
+					noLineComments: true,
+					outputStyle: 'nested',
+					sassDir: 'public/scss',
+					cssDir: 'public/css'
+				}
 			}
-		}
+		},
 		/**
 		*	Watch allows you to watch files for changes and then run a series of grunt tasks on those files
 		* Read more: https://github.com/gruntjs/grunt-contrib-watch
@@ -83,7 +82,7 @@ module.exports = function(grunt) {
 					livereload: true,
 					interrupt: true // if this process is running already when triggered, kill the first and finish this one
 				},
-				files: ['<%= jshint.files %>'], // jshint.files is all of our javascript files
+				files: ['public/js/*.js'],
       	tasks: ['jshint', 'concat', 'uglify']
 			},
 			// this will compile our sass down to css when we update the files
@@ -93,7 +92,7 @@ module.exports = function(grunt) {
 					interrupt: true // if this process is running already when triggered, kill the first and finish this one
 				},
 				files: ['public/scss/*.scss'],
-				tasks: ['compass']
+				tasks: ['compass', 'concat']
 			}
     }
   });
@@ -111,5 +110,4 @@ module.exports = function(grunt) {
 	grunt.registerTask('monitor', ['watch']);
 	// if we just want to generate our output files, we can run 'grunt' and the default task will run
   grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
-
 };

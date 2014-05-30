@@ -1,8 +1,20 @@
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+$h1_color: #72B34D;
+$hover_color: #30700B;
+
+.container {
+  margin-top: 20px;
+	.navbar {
+	  margin-bottom: 20px;
+	}
 }
 
-.navbar {
-  margin-bottom: 20px;
+.jumbotron{
+	h1{
+		color: $h1_color;
+		
+		/* psuedo-selectors on the current element using & */
+		&:hover{
+			color: $hover_color;
+		}
+	}
 }

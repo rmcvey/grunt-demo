@@ -1,0 +1,10 @@
+.container {
+  margin-top: 20px; }
+  .container .navbar {
+    margin-bottom: 20px; }
+
+.jumbotron h1 {
+  color: #72b34d;
+  /* psuedo-selectors on the current element using & */ }
+  .jumbotron h1:hover {
+    color: #30700b; }
